@@ -1,0 +1,120 @@
+---
+import Button from "./Button.astro";
+---
+
+<section class="about">
+  <div class="aboutWrapper wrapper">
+    <div class="aboutImage">
+      <div class="myPhoto">
+        <img src="/MyPhoto.png" alt="My photo" />
+      </div>
+    </div>
+    <div class="aboutContent">
+      <h1 class="aboutTitle">
+        <span class="aboutTitleAccent">Привет, меня зовуе</span>
+        <br />
+        <span>Паршутич Сергей</span>
+        <br />
+        <span class="aboutTitleAccent">я - Frontend разработчик</span>
+      </h1>
+      <h4 class="aboutDescription">
+        Люблю находить решение сложных задач.
+        <br />
+        Всегда готов к изучению нового.
+        <br />
+      </h4>
+      <div class="aboutButtonContainer">
+        <button class="aboutButton">Загрузить резюме</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    background-color: #000000;
+  }
+
+  .about::after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 40%;
+    right: 0;
+    bottom: 0;
+    background-color: #181823;
+  }
+
+  .aboutWrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    padding: 80px 0;
+  }
+
+  .aboutImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    width: 52%;
+    height: 650px;
+    background: url("/noise_transparent@2x.png"),
+      radial-gradient(rgba(34, 128, 212, 0.5), rgba(4, 18, 19, 0.5)),
+      linear-gradient(to bottom right, rgba(17, 64, 106, 1), rgba(4, 18, 29, 1));
+  }
+
+  .myPhoto {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fff3e4;
+    border-radius: 50%;
+    height: 400px;
+    width: 400px;
+    opacity: 1;
+  }
+
+  .aboutContent {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 52%;
+    z-index: 3;
+  }
+
+  .aboutTitle {
+    width: 100%;
+  }
+
+  .aboutTitleAccent {
+    font-size: 2.6rem;
+    opacity: 0.5;
+  }
+
+  .aboutDescription {
+    width: 100%;
+    padding: 2rem 0;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .aboutButtonContainer {
+    padding-top: 60px;
+    width: 300px;
+  }
+  .aboutButton {
+    box-sizing: border-box;
+    right: 0;
+    padding: 10px;
+    border: 2px solid red;
+  }
+</style>
