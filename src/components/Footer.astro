@@ -1,14 +1,12 @@
 ---
-
+import Logo from "./Logo.astro";
+import Navigation from "./Navigation.astro";
+import SocialMedia from "./SocialMedia.astro";
 ---
 
 <footer class="footer">
   <div class="footerWrapper wrapper">
-    <div class="logo">
-      <a class="logoLink" href="/">
-        <img class="logoImg" src="/MyLogo.png" alt="logo" />
-      </a>
-    </div>
+    <Logo />
     <div class="footerContent">
       <div class="contactsBar">
         <div class="phone">
@@ -20,60 +18,11 @@
           <span>valid_@tut.by</span>
         </div>
         <div class="socialMedia">
-          <ul class="socials">
-            <li>
-              <a
-                class="socialsLink"
-                href="https://t.me/sergeyvalid"
-                target="_blank"
-              >
-                <img src="/telegram_icon.png" alt="telegram" />
-              </a>
-            </li>
-            <li>
-              <a
-                class="socialsLink"
-                href="https://discordapp.com/users/671437718298951700/"
-                target="_blank"
-              >
-                <img src="/discord_icon.png" alt="discord" />
-              </a>
-            </li>
-            <li>
-              <a
-                class="socialsLink"
-                href="https://www.linkedin.com/in/sergey-parshutich-7bb796295/"
-                target="_blank"
-              >
-                <img src="/linkedin_icon.png" alt="linkedin" />
-              </a>
-            </li>
-            <li>
-              <a
-                class="socialsLink"
-                href="https://vk.com/id368032878"
-                target="_blank"
-              >
-                <img src={"/vk_icon.png"} alt="vk" />
-              </a>
-            </li>
-          </ul>
+          <SocialMedia />
         </div>
       </div>
 
-      <nav class="navigation">
-        <ul class="navUl">
-          <li class="navLink">
-            <a href="#experience">Рабочий опыт</a>
-          </li>
-          <li class="navLink">
-            <a href="#myWorks">Мои проекты</a>
-          </li>
-          <li class="navLink">
-            <a href="#contact">Контакты</a>
-          </li>
-        </ul>
-      </nav>
+      <Navigation direction="column" />
     </div>
   </div>
 </footer>
@@ -92,14 +41,6 @@
     padding: 80px 0;
     display: flex;
     flex-direction: column;
-  }
-
-  .logo {
-  }
-  .logoLink {
-  }
-  .logoImg {
-    height: 60px;
   }
 
   .footerContent {
@@ -139,20 +80,5 @@
     img {
       width: 30px;
     }
-  }
-
-  .navigation {
-    display: flex;
-    align-items: center;
-    z-index: 2;
-  }
-
-  .navUl {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .navLink {
-    padding: 16px 24px;
   }
 </style>

@@ -1,89 +1,51 @@
 ---
-
+import Logo from "./Logo.astro";
+import Navigation from "./Navigation.astro";
 ---
 
 <header class="header">
   <div class="headerWrapper wrapper">
-    <div class="logo">
-      <a class="logoLink" href="/">
-        <img class="logoImg" src="/MyLogo.png" alt="logo" />
-      </a>
+    <Logo />
+    <div class="headerNav">
+      <Navigation direction="row" />
     </div>
-    <nav class="headerNav">
-      <div class="navigation">
-        <ul class="navUl">
-          <li class="navLink">
-            <a href="#experience">Рабочий опыт</a>
-          </li>
-          <li class="navLink">
-            <a href="#projects">Мои проекты</a>
-          </li>
-          <li class="navLink">
-            <a href="#contacts">Контакты</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
   </div>
+</header>
 
-  <style>
-    .header {
-      max-width: 1440px;
-      margin: auto;
-      position: relative;
-      background-color: #000000;
-    }
+<style>
+  .header {
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    background-color: #000000;
+  }
 
-    .header::after {
-      z-index: 1;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 40%;
-      right: 0;
-      bottom: 0;
-      background-color: #181823;
-    }
+  .header::after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 40%;
+    right: 0;
+    bottom: 0;
+    background-color: #181823;
+  }
 
-    .headerWrapper {
-      max-width: 1300px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: auto;
-      height: 88px;
-      /* @media screen and (max-width: 650px) {
+  .headerWrapper {
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    height: 88px;
+    /* @media screen and (max-width: 650px) {
       width: 87.5%;
     } */
-    }
+  }
 
-    .logo {
-    }
-    .logoLink {
-    }
-
-    .logoImg {
-      height: 60px;
-    }
-
-    .headerNav {
-      display: flex;
-      flex-direction: row;
-      z-index: 2;
-    }
-
-    .navigation {
-      display: flex;
-      align-items: center;
-    }
-
-    .navUl {
-      display: flex;
-      flex-direction: row;
-    }
-
-    .navLink {
-      padding: 16px 24px;
-    }
-  </style>
-</header>
+  .headerNav {
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+  }
+</style>

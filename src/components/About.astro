@@ -24,7 +24,9 @@ import Button from "./Button.astro";
         <br />
       </h4>
       <div class="aboutButtonContainer">
-        <button class="aboutButton">Загрузить резюме</button>
+        <a class="button aboutButton" href="imagesUrl.myResume" target="_blank">
+          <Button btnName={"Загрузить резюме"} />
+        </a>
       </div>
     </div>
   </div>
@@ -110,11 +112,5 @@ import Button from "./Button.astro";
   .aboutButtonContainer {
     padding-top: 60px;
     width: 300px;
-  }
-  .aboutButton {
-    box-sizing: border-box;
-    right: 0;
-    padding: 10px;
-    border: 2px solid red;
   }
 </style>

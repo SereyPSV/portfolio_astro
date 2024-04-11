@@ -1,0 +1,42 @@
+---
+interface Props {
+  direction: string;
+}
+const { direction } = Astro.props as Props;
+---
+
+<nav class="navigation">
+  <ul class={direction}>
+    <li class="navLink">
+      <a href="#experience">Рабочий опыт</a>
+    </li>
+    <li class="navLink">
+      <a href="#myWorks">Мои проекты</a>
+    </li>
+    <li class="navLink">
+      <a href="#contact">Контакты</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .navigation {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navLink {
+    padding: 16px 24px;
+  }
+</style>
