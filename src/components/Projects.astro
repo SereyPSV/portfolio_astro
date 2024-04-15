@@ -1,20 +1,36 @@
 ---
-
+import ProjectCard from "./ProjectCard.astro";
 ---
 
 <section id={"projects"} class="projects">
-  <div class="projectsWrapper wrapper">Projects</div>
+  <div class="projectsWrapper wrapper">
+    <h2 class="projectsTitle">Мои проекты</h2>
+    <div class="projectsList">
+      <ProjectCard />
+    </div>
+  </div>
 </section>
 
 <style>
   .projects {
+    display: flex;
+    justify-content: center;
     max-width: 1440px;
     margin: auto;
-    background-color: rgba(34, 128, 212, 1);
+    padding-bottom: 100px;
+    background-color: var(--dark);
   }
 
   .projectsWrapper {
-    max-width: 1300px;
-    height: 700px;
+    width: 1300px;
+  }
+
+  .projectsTitle {
+    padding-bottom: 40px;
+  }
+
+  .projectsList {
+    position: relative;
+    margin: auto;
   }
 </style>

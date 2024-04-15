@@ -1,21 +1,53 @@
 ---
-
+import { mySkills } from "../content/content";
 ---
 
 <section id={"experience"} class="experience">
-  <div class="experienceWrapper wrapper">Experience</div>
+  <div class="experienceWrapper wrapper">
+    <div class="hardSkills">
+      <h2 class="experienceTitle">{mySkills.hardSkillTitle}</h2>
+      <ul class="experienceDescription">
+        {mySkills.hardSkillsList.map((skill) => <li>{skill}</li>)}
+      </ul>
+    </div>
+    <div class="softSkills">
+      <h2 class="experienceTitle">{mySkills.softSkillTitle}</h2>
+      <ul class="experienceDescription">
+        {mySkills.softSkillsList.map((skill) => <li>{skill}</li>)}
+      </ul>
+    </div>
+  </div>
 </section>
 
 <style>
   .experience {
     max-width: 1440px;
     margin: auto;
-    color: #fff3e4;
-    background-color: #000000;
+    padding: 100px 0;
+    background-color: var(--dark);
   }
 
   .experienceWrapper {
-    max-width: 1300px;
-    height: 700px;
+    display: flex;
+  }
+
+  .experienceDescription {
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  .hardSkills {
+    width: 50%;
+    padding: 40px 71px;
+    background-color: var(--mainDark);
+  }
+  .softSkills {
+    width: 50%;
+    padding: 40px 71px;
+    color: var(--mainDark);
+    background-color: var(--mainLight);
+    h2 {
+      color: var(--mainDark);
+    }
   }
 </style>

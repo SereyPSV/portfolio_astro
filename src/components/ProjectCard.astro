@@ -1,0 +1,90 @@
+---
+import { projects } from "../content/projects";
+---
+
+{
+  projects.map((project) => (
+    <div class="projectItem" id={project.id}>
+      <a class={project.id} href={"#" + project.id} style={project.colors}>
+        <span class="projectTitle">{project.title}</span>
+        {project.techniques.map((technique) => (
+          <div class="techniqueIcon">
+            <svg width="24px" height="24px">
+              <use xlink:href={technique} />
+            </svg>
+          </div>
+        ))}
+      </a>
+      <div class="content">
+        <div class="inner-content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nobis
+          iusto deleniti corporis alias quo a quam similique cupiditate pariatur
+          aliquid, omnis, officia dicta officiis impedit nisi dolores ut,
+          distinctio placeat. Magni dolores perferendis ab laborum in neque, non
+          exercitationem!
+        </div>
+      </div>
+    </div>
+  ))
+}
+
+<style>
+  .projects {
+    margin: auto;
+  }
+
+  .projectItem {
+    background: var(--mainLight);
+  }
+
+  .projectItem a {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.9rem 1.8rem;
+    color: var(--mainDark);
+    position: relative;
+  }
+
+  .projectItem a:before {
+    content: "";
+    border-top: 7px solid var(--mainLight);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+  }
+
+  .projectTitle {
+    padding-right: 120px;
+  }
+
+  .techniqueIcon {
+    padding-right: 10px;
+  }
+
+  .content {
+    max-height: 0em;
+    transition: 0.3s linear 0s;
+    overflow: hidden;
+    color: var(--mainDark);
+  }
+
+  .inner-content {
+    padding: 1.8rem;
+  }
+
+  .projectItem + .projectItem a {
+    border-top: 5px solid var(--dark);
+  }
+
+  .projectItem:target .content {
+    max-height: 15em;
+  }
+
+  .projectItem:target a:before {
+    transform: rotate(-90deg);
+  }
+</style>

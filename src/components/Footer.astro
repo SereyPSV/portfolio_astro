@@ -1,21 +1,27 @@
 ---
+import { Image } from "astro:assets";
+import { contact } from "../content/contacts";
 import Logo from "./Logo.astro";
 import Navigation from "./Navigation.astro";
 import SocialMedia from "./SocialMedia.astro";
 ---
 
-<footer class="footer">
+<footer id="contact" class="footer">
   <div class="footerWrapper wrapper">
     <Logo />
     <div class="footerContent">
       <div class="contactsBar">
         <div class="phone">
-          <img src="/phone.svg" alt="phone" />
-          <span>+375 (29) 670-91-48</span>
+          <svg width="20px" height="20px">
+            <use xlink:href="sprite.svg#phone"></use>
+          </svg>
+          <span>{contact.phone}</span>
         </div>
         <div class="email">
-          <img src="/opened-email.svg" alt="email" />
-          <span>valid_@tut.by</span>
+          <svg width="20px" height="20px">
+            <use xlink:href="sprite.svg#mail"></use>
+          </svg>
+          <span>{contact.email}</span>
         </div>
         <div class="socialMedia">
           <SocialMedia />
@@ -32,7 +38,7 @@ import SocialMedia from "./SocialMedia.astro";
     max-width: 1440px;
     margin: auto;
     position: relative;
-    background-color: #181823;
+    background-color: var(--mainDark);
   }
 
   .footerWrapper {

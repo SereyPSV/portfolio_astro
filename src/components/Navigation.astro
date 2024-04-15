@@ -1,4 +1,6 @@
 ---
+import { navigation } from "../content/content";
+
 interface Props {
   direction: string;
 }
@@ -8,13 +10,13 @@ const { direction } = Astro.props as Props;
 <nav class="navigation">
   <ul class={direction}>
     <li class="navLink">
-      <a href="#experience">Рабочий опыт</a>
+      <a href="#experience">{navigation.experience}</a>
     </li>
     <li class="navLink">
-      <a href="#myWorks">Мои проекты</a>
+      <a href="#projects">{navigation.projects}</a>
     </li>
     <li class="navLink">
-      <a href="#contact">Контакты</a>
+      <a href="#contact">{navigation.contacts}</a>
     </li>
   </ul>
 </nav>

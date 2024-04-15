@@ -1,9 +1,11 @@
 ---
+import { socialsUrl } from "../content/contacts";
+import { aboutButton, aboutText } from "../content/content";
 import Button from "./Button.astro";
 ---
 
 <section class="about">
-  <div class="aboutWrapper wrapper">
+  <div id="about" class="aboutWrapper wrapper">
     <div class="aboutImage">
       <div class="myPhoto">
         <img src="/MyPhoto.png" alt="My photo" />
@@ -11,21 +13,25 @@ import Button from "./Button.astro";
     </div>
     <div class="aboutContent">
       <h1 class="aboutTitle">
-        <span class="aboutTitleAccent">Привет, меня зовуе</span>
+        <span class="aboutTitleAccent">{aboutText.titleHello}</span>
         <br />
-        <span>Паршутич Сергей</span>
+        <span>{aboutText.titleName}</span>
         <br />
-        <span class="aboutTitleAccent">я - Frontend разработчик</span>
+        <span class="aboutTitleAccent">{aboutText.titleAbout}</span>
       </h1>
       <h4 class="aboutDescription">
-        Люблю находить решение сложных задач.
+        {aboutText.desFirst}
         <br />
-        Всегда готов к изучению нового.
+        {aboutText.desSecond}
         <br />
       </h4>
       <div class="aboutButtonContainer">
-        <a class="button aboutButton" href="imagesUrl.myResume" target="_blank">
-          <Button btnName={"Загрузить резюме"} />
+        <a
+          class="button aboutButton"
+          href={socialsUrl.myResume}
+          target="_blank"
+        >
+          <Button btnName={aboutButton.btnTitle} />
         </a>
       </div>
     </div>
@@ -37,7 +43,7 @@ import Button from "./Button.astro";
     max-width: 1440px;
     margin: auto;
     position: relative;
-    background-color: #000000;
+    background-color: var(--dark);
   }
 
   .about::after {
@@ -48,7 +54,7 @@ import Button from "./Button.astro";
     left: 40%;
     right: 0;
     bottom: 0;
-    background-color: #181823;
+    background-color: var(--mainDark);
   }
 
   .aboutWrapper {
@@ -76,7 +82,7 @@ import Button from "./Button.astro";
     display: flex;
     justify-content: center;
     overflow: hidden;
-    background-color: #fff3e4;
+    background-color:;
     border-radius: 50%;
     height: 400px;
     width: 400px;
