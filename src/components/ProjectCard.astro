@@ -1,90 +1,87 @@
 ---
 import { projects } from "../content/projects";
+import Slider from "./Slider.astro";
 ---
 
 {
   projects.map((project) => (
     <div class="projectItem" id={project.id}>
-      <a class={project.id} href={"#" + project.id} style={project.colors}>
-        <span class="projectTitle">{project.title}</span>
-        {project.techniques.map((technique) => (
-          <div class="techniqueIcon">
-            <svg width="24px" height="24px">
-              <use xlink:href={technique} />
-            </svg>
-          </div>
-        ))}
-      </a>
-      <div class="content">
-        <div class="inner-content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nobis
-          iusto deleniti corporis alias quo a quam similique cupiditate pariatur
-          aliquid, omnis, officia dicta officiis impedit nisi dolores ut,
-          distinctio placeat. Magni dolores perferendis ab laborum in neque, non
-          exercitationem!
+      <div class="projectTitleWrapper" style={project.colors}>
+        <div class="projectTitle">{project.title}</div>
+        <div class="projectLink">
+          <a class="githubLink" href={project.link} target="_blank">
+            link: <span class="accent">{project.link}</span>
+          </a>
         </div>
+        <div class="projectTechniques">
+          {project.techniques.map((technique) => (
+            <div class="techniqueIcon">
+              <svg width="24px" height="24px">
+                <use xlink:href={technique} />
+              </svg>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="sliderWrapper">
+        <Slider sliderId={project.id} projectsImgUrl={project.projectsImgUrl} />
+      </div>
+      <div class="githubWrapper">
+        <a class="githubLink" href={project.github} target="_blank">
+          <h3>
+            GitHub: <span class="accent">{project.github}</span>
+          </h3>
+        </a>
       </div>
     </div>
   ))
 }
 
 <style>
-  .projects {
-    margin: auto;
-  }
-
   .projectItem {
-    background: var(--mainLight);
+    background: var(--mainDark);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 40px;
   }
 
-  .projectItem a {
+  .projectTitleWrapper {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     font-size: 1.5rem;
     font-weight: 500;
-    padding: 0.9rem 1.8rem;
-    color: var(--mainDark);
-    position: relative;
-  }
-
-  .projectItem a:before {
-    content: "";
-    border-top: 7px solid var(--mainLight);
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    position: absolute;
-    top: 25px;
-    right: 30px;
+    padding: 1rem 0rem;
   }
 
   .projectTitle {
-    padding-right: 120px;
+    width: 30%;
+  }
+
+  .projectLink {
+    width: 35%;
+  }
+
+  .projectTechniques {
+    display: flex;
+    width: 30%;
   }
 
   .techniqueIcon {
     padding-right: 10px;
   }
 
-  .content {
-    max-height: 0em;
-    transition: 0.3s linear 0s;
-    overflow: hidden;
-    color: var(--mainDark);
+  .sliderWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
   }
 
-  .inner-content {
-    padding: 1.8rem;
+  .githubWrapper {
+    padding: 20px 0;
   }
-
-  .projectItem + .projectItem a {
-    border-top: 5px solid var(--dark);
-  }
-
-  .projectItem:target .content {
-    max-height: 15em;
-  }
-
-  .projectItem:target a:before {
-    transform: rotate(-90deg);
+  .accent {
+    opacity: 0.5;
   }
 </style>
