@@ -8,16 +8,11 @@ import Slider from "./Slider.astro";
     <div class="projectItem" id={project.id}>
       <div class="projectTitleWrapper" style={project.colors}>
         <div class="projectTitle">{project.title}</div>
-        <div class="projectLink">
-          <a class="githubLink" href={project.link} target="_blank">
-            link: <span class="accent">{project.link}</span>
-          </a>
-        </div>
         <div class="projectTechniques">
           {project.techniques.map((technique) => (
-            <div class="techniqueIcon">
+            <div class="techniqueIcon" title={technique}>
               <svg width="24px" height="24px">
-                <use xlink:href={technique} />
+                <use xlink:href={`sprite.svg#${technique}`} />
               </svg>
             </div>
           ))}
@@ -26,12 +21,24 @@ import Slider from "./Slider.astro";
       <div class="sliderWrapper">
         <Slider sliderId={project.id} projectsImgUrl={project.projectsImgUrl} />
       </div>
-      <div class="githubWrapper">
-        <a class="githubLink" href={project.github} target="_blank">
-          <h3>
-            GitHub: <span class="accent">{project.github}</span>
-          </h3>
-        </a>
+      <div class="projectDescription">
+        <h3>{project.description}</h3>
+      </div>
+      <div class="projectFooterWrapper">
+        <div class="githubLink">
+          <a href={project.github} target="_blank">
+            <h3>
+              GitHub: <span class="accent">{project.github}</span>
+            </h3>
+          </a>
+        </div>
+        <div class="projectLink">
+          <a href={project.link} target="_blank">
+            <h3>
+              link: <span class="accent">{project.link}</span>
+            </h3>
+          </a>
+        </div>
       </div>
     </div>
   ))
@@ -45,7 +52,9 @@ import Slider from "./Slider.astro";
     margin-bottom: 40px;
   }
 
-  .projectTitleWrapper {
+  .projectTitleWrapper,
+  .projectDescription,
+  .projectFooterWrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,17 +63,10 @@ import Slider from "./Slider.astro";
     padding: 1rem 0rem;
   }
 
-  .projectTitle {
-    width: 30%;
-  }
-
-  .projectLink {
-    width: 35%;
-  }
-
+  .projectTitle,
   .projectTechniques {
     display: flex;
-    width: 30%;
+    width: 50%;
   }
 
   .techniqueIcon {
@@ -78,10 +80,21 @@ import Slider from "./Slider.astro";
     padding: 20px 0;
   }
 
-  .githubWrapper {
-    padding: 20px 0;
+  .github {
   }
-  .accent {
-    opacity: 0.5;
+
+  .githubLink,
+  .projectLink {
+    width: 50%;
+
+    h3 {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .accent {
+      opacity: 0.5;
+    }
   }
 </style>

@@ -12,7 +12,7 @@ export const aboutText = {
   desSecond: "Всегда готов к изучению нового.",
   btnTitle: "Загрузить Резюме",
 };
-export const aboutButton = { btnTitle: "Загрузить Резюме" };
+export const aboutButton = { btnTitle: "Резюме" };
 
 export const mySkills = {
   hardSkillTitle: "СПЕЦИАЛИЗАЦИЯ",
