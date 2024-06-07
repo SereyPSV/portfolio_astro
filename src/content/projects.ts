@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: "Startup Summer 2024. Для просмотра нужен VPN",
     link: "https://startup-summer-2024-sergeys-projects-62b61f6a.vercel.app/movies",
     colors: "color: var(--mainLight); background: var(--mainDark);",
-    techniques: ["react", "redux", "nodeJs", "express", "docker"],
+    techniques: ["nextJs", "react", "mantine", "typeScript"],
     projectsImgUrl: [
       "https://firebasestorage.googleapis.com/v0/b/resume-d56ba.appspot.com/o/movies%2Fmovie-mayn.webp?alt=media&token=1db014a2-58cb-4a02-a46f-b75c115f6381",
       "https://firebasestorage.googleapis.com/v0/b/resume-d56ba.appspot.com/o/movies%2Fmovies-main.webp?alt=media&token=f464d397-ed1f-40d0-8171-1650531a0ec1",
