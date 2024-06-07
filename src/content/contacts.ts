@@ -9,5 +9,5 @@ export const socialsUrl = {
   linkedin: "https://www.linkedin.com/in/sergey-parshutich-7bb796295/",
   vk: "https://vk.com/id368032878",
   myResume:
-    "https://firebasestorage.googleapis.com/v0/b/resume-d56ba.appspot.com/o/Rezume%20Parshutich%20Sergey.pdf?alt=media&token=4c99328d-beda-4d06-8c9e-f6302a95c55c",
+    "https://firebasestorage.googleapis.com/v0/b/resume-d56ba.appspot.com/o/Rezume%20Parshutich%20Sergey.pdf?alt=media&token=97bc6ccd-e30c-4a16-bd88-046155ecefab",
 };

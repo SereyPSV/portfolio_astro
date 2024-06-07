@@ -2,6 +2,22 @@ import type { Project } from "./types";
 
 export const projects: Project[] = [
   {
+    id: "startupSummer2024",
+    title: "Startup Summer 2024",
+    link: "https://startup-summer-2024-sergeys-projects-62b61f6a.vercel.app/movies",
+    colors: "color: var(--mainLight); background: var(--mainDark);",
+    techniques: ["react", "redux", "nodeJs", "express", "docker"],
+    projectsImgUrl: [
+      "https://firebasestorage.googleapis.com/v0/b/resume-d56ba.appspot.com/o/movies%2Fmovie-mayn.webp?alt=media&token=1db014a2-58cb-4a02-a46f-b75c115f6381",
+      "https://firebasestorage.googleapis.com/v0/b/resume-d56ba.appspot.com/o/movies%2Fmovies-main.webp?alt=media&token=f464d397-ed1f-40d0-8171-1650531a0ec1",
+      "https://firebasestorage.googleapis.com/v0/b/resume-d56ba.appspot.com/o/movies%2Frated.webp?alt=media&token=33216394-673b-41df-90d4-07014384bdd4",
+      "https://firebasestorage.googleapis.com/v0/b/resume-d56ba.appspot.com/o/movies%2Frating.webp?alt=media&token=2545b9af-67f2-41df-82e9-bf683a81db5f",
+    ],
+    description:
+      "Проект выполнялся в рамках тестового задания Startup Summer 2024.",
+    github: "https://github.com/SereyPSV/Startup-Summer-2024.git",
+  },
+  {
     id: "hardwareStore",
     title: "Строительный магазин",
     link: "http://147.45.102.26/",
