@@ -3,7 +3,7 @@ import type { Project } from "./types";
 export const projects: Project[] = [
   {
     id: "startupSummer2024",
-    title: "Startup Summer 2024",
+    title: "Startup Summer 2024. Для просмотра нужен VPN",
     link: "https://startup-summer-2024-sergeys-projects-62b61f6a.vercel.app/movies",
     colors: "color: var(--mainLight); background: var(--mainDark);",
     techniques: ["react", "redux", "nodeJs", "express", "docker"],
@@ -14,7 +14,7 @@ export const projects: Project[] = [
       "https://firebasestorage.googleapis.com/v0/b/resume-d56ba.appspot.com/o/movies%2Frating.webp?alt=media&token=2545b9af-67f2-41df-82e9-bf683a81db5f",
     ],
     description:
-      "Проект выполнялся в рамках тестового задания Startup Summer 2024.",
+      "Проект выполнялся в рамках тестового задания Startup Summer 2024. Пока для просмотра нужен VPN",
     github: "https://github.com/SereyPSV/Startup-Summer-2024.git",
   },
   {
